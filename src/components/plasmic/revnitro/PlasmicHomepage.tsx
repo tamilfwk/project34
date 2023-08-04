@@ -264,7 +264,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 {(
                   (() => {
                     try {
-                      return $queries.slider.data;
+                      return $queries.query2.data;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
