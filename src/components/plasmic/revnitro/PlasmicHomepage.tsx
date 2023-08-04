@@ -46,7 +46,6 @@ import {
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: nqp6ufvZoI04/component
 import Slider from "react-slick"; // plasmic-import: HOQUyOpClJ/codeComponent
-import BlogCard from "../../BlogCard"; // plasmic-import: G9asBr2dMf/component
 import BlogCard2 from "../../BlogCard2"; // plasmic-import: T3xw65d63J/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 0GG8n9BMOzpQ/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: rl4fKnBzap8m/codeComponent
@@ -60,6 +59,7 @@ import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: LBNvwF65
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: va4Dbs6cN/icon
 import AvatarIcon from "./icons/PlasmicIcon__Avatar"; // plasmic-import: MO5bOueWO/icon
 import image2N7HzP8A2L from "./images/image2.png"; // plasmic-import: N7HzP8A2l/picture
+import image63PtHnw5VI from "./images/image6.png"; // plasmic-import: 3PtHNW5vI/picture
 import image7CvWCKqpn from "./images/image7.png"; // plasmic-import: CV-wCKqpn/picture
 
 createPlasmicElementProxy;
@@ -89,6 +89,10 @@ export type PlasmicHomepage__OverridesType = {
   container?: p.Flex<"div">;
   label?: p.Flex<"div">;
   container2?: p.Flex<"div">;
+  cards1?: p.Flex<"div">;
+  content?: p.Flex<"div">;
+  badgesNeutral?: p.Flex<"div">;
+  title?: p.Flex<"div">;
   style04?: p.Flex<"div">;
   testimonial?: p.Flex<"div">;
   quote?: p.Flex<"div">;
@@ -431,58 +435,117 @@ function PlasmicHomepage__RenderFunc(props: {
                 </p.Stack>
               </p.Stack>
               <div className={classNames(projectcss.all, sty.freeBox__jCmPf)}>
-                <div className={classNames(projectcss.all, sty.freeBox__bgr5H)}>
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard__mx1Xn
-                    )}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__mFg3)}>
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard__nkf9B
-                    )}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__isdji)}>
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard__vkdn2
-                    )}
-                  />
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___9Jg9Y)}
-                >
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard__eLp1Y
-                    )}
-                  />
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__bD03B)}>
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard___8St3O
-                    )}
-                  />
-                </div>
-                <div
-                  className={classNames(projectcss.all, sty.freeBox___0SjHi)}
-                >
-                  <BlogCard
-                    className={classNames(
-                      "__wab_instance",
-                      sty.blogCard__vzFig
-                    )}
-                  />
-                </div>
+                {(
+                  (() => {
+                    try {
+                      return $queries.query2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })() ?? []
+                ).map((currentItem, currentIndex) => (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__bgr5H)}
+                    key={currentIndex}
+                  >
+                    <div
+                      data-plasmic-name={"cards1"}
+                      data-plasmic-override={overrides.cards1}
+                      className={classNames(projectcss.all, sty.cards1)}
+                    >
+                      <p.Stack
+                        as={"div"}
+                        data-plasmic-name={"content"}
+                        data-plasmic-override={overrides.content}
+                        hasGap={true}
+                        className={classNames(projectcss.all, sty.content)}
+                      >
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img__wXjjA)}
+                          displayHeight={"217px" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"100%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"100%" as const}
+                          loading={"lazy" as const}
+                          src={{
+                            src: image63PtHnw5VI,
+                            fullWidth: 930,
+                            fullHeight: 620,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <p.Stack
+                          as={"div"}
+                          data-plasmic-name={"badgesNeutral"}
+                          data-plasmic-override={overrides.badgesNeutral}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.badgesNeutral
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__wfLqA
+                            )}
+                          >
+                            {"BIKE"}
+                          </div>
+                        </p.Stack>
+                        <div
+                          data-plasmic-name={"title"}
+                          data-plasmic-override={overrides.title}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.title
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.Name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "Rider Development Tips";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                        {false ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__eNhhy
+                            )}
+                          >
+                            {
+                              "This is a description of the text that is in the article as a pre screener for what you need to know."
+                            }
+                          </div>
+                        ) : null}
+                      </p.Stack>
+                    </div>
+                  </div>
+                ))}
               </div>
               <p.Stack
                 as={"div"}
@@ -748,6 +811,10 @@ const PlasmicDescendants = {
     "container",
     "label",
     "container2",
+    "cards1",
+    "content",
+    "badgesNeutral",
+    "title",
     "style04",
     "testimonial",
     "quote",
@@ -781,6 +848,10 @@ const PlasmicDescendants = {
     "container",
     "label",
     "container2",
+    "cards1",
+    "content",
+    "badgesNeutral",
+    "title",
     "style04",
     "testimonial",
     "quote",
@@ -831,6 +902,10 @@ const PlasmicDescendants = {
   container: ["container"],
   label: ["label"],
   container2: ["container2"],
+  cards1: ["cards1", "content", "badgesNeutral", "title"],
+  content: ["content", "badgesNeutral", "title"],
+  badgesNeutral: ["badgesNeutral"],
+  title: ["title"],
   style04: [
     "style04",
     "testimonial",
@@ -878,6 +953,10 @@ type NodeDefaultElementType = {
   container: "div";
   label: "div";
   container2: "div";
+  cards1: "div";
+  content: "div";
+  badgesNeutral: "div";
+  title: "div";
   style04: "div";
   testimonial: "div";
   quote: "div";
@@ -971,6 +1050,10 @@ export const PlasmicHomepage = Object.assign(
     container: makeNodeComponent("container"),
     label: makeNodeComponent("label"),
     container2: makeNodeComponent("container2"),
+    cards1: makeNodeComponent("cards1"),
+    content: makeNodeComponent("content"),
+    badgesNeutral: makeNodeComponent("badgesNeutral"),
+    title: makeNodeComponent("title"),
     style04: makeNodeComponent("style04"),
     testimonial: makeNodeComponent("testimonial"),
     quote: makeNodeComponent("quote"),
