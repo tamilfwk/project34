@@ -255,10 +255,11 @@ function PlasmicHomepage__RenderFunc(props: {
               <Slider
                 data-plasmic-name={"slider"}
                 data-plasmic-override={overrides.slider}
-                autoplay={true}
+                autoplay={false}
                 centerMode={false}
                 className={classNames("__wab_instance", sty.slider)}
                 dots={false}
+                infinite={false}
                 pauseOnHover={false}
               >
                 {(
@@ -275,7 +276,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       throw e;
                     }
                   })() ?? []
-                ).map((currentItem, currentIndex) => (
+                ).map((items, currentIndex) => (
                   <div
                     className={classNames(projectcss.all, sty.freeBox__afX61)}
                     key={currentIndex}
@@ -307,7 +308,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return currentItem.Name;
+                            return items.Name;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
