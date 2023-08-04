@@ -15,12 +15,23 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.4",
+    "@ant-design/pro-components": "^2.6.11",
+    "@plasmicapp/cli": "^0.1.303",
     "@plasmicapp/loader-gatsby": "^1.0.287",
+    "@plasmicapp/react-web": "^0.2.244",
+    "@plasmicpkgs/antd5": "^0.0.103",
+    "@plasmicpkgs/plasmic-basic-components": "^0.0.168",
+    "@plasmicpkgs/plasmic-nav": "^0.0.127",
+    "@plasmicpkgs/plasmic-rich-components": "^1.0.112",
+    "@plasmicpkgs/react-youtube": "^7.13.160",
     "gatsby": "^5.11.0",
     "gatsby-plugin-react-helmet": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
