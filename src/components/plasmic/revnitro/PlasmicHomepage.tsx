@@ -255,11 +255,11 @@ function PlasmicHomepage__RenderFunc(props: {
               <Slider
                 data-plasmic-name={"slider"}
                 data-plasmic-override={overrides.slider}
-                autoplay={false}
+                autoplay={true}
                 centerMode={false}
                 className={classNames("__wab_instance", sty.slider)}
                 dots={false}
-                infinite={false}
+                infinite={true}
                 pauseOnHover={false}
               >
                 {(
