@@ -58,7 +58,6 @@ import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: LBNvwF65
 
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: va4Dbs6cN/icon
 import AvatarIcon from "./icons/PlasmicIcon__Avatar"; // plasmic-import: MO5bOueWO/icon
-import image2N7HzP8A2L from "./images/image2.png"; // plasmic-import: N7HzP8A2l/picture
 import image63PtHnw5VI from "./images/image6.png"; // plasmic-import: 3PtHNW5vI/picture
 import image7CvWCKqpn from "./images/image7.png"; // plasmic-import: CV-wCKqpn/picture
 
@@ -255,18 +254,8 @@ function PlasmicHomepage__RenderFunc(props: {
               <Slider
                 data-plasmic-name={"slider"}
                 data-plasmic-override={overrides.slider}
-                accessibility={false}
                 autoplay={true}
-                centerMode={false}
                 className={classNames("__wab_instance", sty.slider)}
-                dots={false}
-                draggable={false}
-                infinite={false}
-                pauseOnHover={false}
-                swipe={false}
-                touchMove={false}
-                useCSS={false}
-                useTransform={false}
               >
                 {(
                   (() => {
@@ -282,45 +271,42 @@ function PlasmicHomepage__RenderFunc(props: {
                       throw e;
                     }
                   })() ?? []
-                ).map((items, currentIndex) => (
+                ).map((currentItem, currentIndex) => (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__afX61)}
+                    className={classNames(projectcss.all, sty.freeBox__pfIcp)}
                     key={currentIndex}
                   >
                     <p.PlasmicImg
                       alt={""}
-                      className={classNames(sty.img__hgKp4)}
+                      className={classNames(sty.img__vSneo)}
                       displayHeight={"auto" as const}
                       displayMaxHeight={"none" as const}
-                      displayMaxWidth={"none" as const}
+                      displayMaxWidth={"100%" as const}
                       displayMinHeight={"0" as const}
                       displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      src={{
-                        src: image2N7HzP8A2L,
-                        fullWidth: 3840,
-                        fullHeight: 2160,
-                        aspectRatio: undefined
-                      }}
+                      displayWidth={"auto" as const}
+                      src={
+                        "https://static1.plasmic.app/components/react-slick/slide1.png" as const
+                      }
                     />
 
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__wDaxT
+                        sty.text__rf7CR
                       )}
                     >
                       <React.Fragment>
                         {(() => {
                           try {
-                            return items.Name;
+                            return currentItem.Name;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "BIKE";
+                              return "";
                             }
                             throw e;
                           }
