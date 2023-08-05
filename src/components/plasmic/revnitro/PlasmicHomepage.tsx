@@ -76,7 +76,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  slider?: p.Flex<typeof Slider>;
+  homeslider?: p.Flex<typeof Slider>;
   style05?: p.Flex<"div">;
   heading?: p.Flex<"div">;
   heading2?: p.Flex<"div">;
@@ -164,25 +164,6 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const [$queries, setDollarQueries] = React.useState({});
 
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "variable",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) =>
-          `${undefined}${undefined}`
-      }
-    ],
-    [$props, $ctx, $refs]
-  );
-  const $state = p.useDollarState(stateSpecs, {
-    $props,
-    $ctx,
-    $queries,
-    $refs
-  });
-
   const new$Queries = {
     query2: usePlasmicDataOp(
       (() => {
@@ -252,10 +233,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 />
               ) : null}
               <Slider
-                data-plasmic-name={"slider"}
-                data-plasmic-override={overrides.slider}
+                data-plasmic-name={"homeslider"}
+                data-plasmic-override={overrides.homeslider}
                 autoplay={true}
-                className={classNames("__wab_instance", sty.slider)}
+                className={classNames("__wab_instance", sty.homeslider)}
+                pauseOnHover={false}
               >
                 {(
                   (() => {
@@ -792,7 +774,7 @@ const PlasmicDescendants = {
     "root",
     "section",
     "navbar",
-    "slider",
+    "homeslider",
     "style05",
     "heading",
     "heading2",
@@ -829,7 +811,7 @@ const PlasmicDescendants = {
   section: [
     "section",
     "navbar",
-    "slider",
+    "homeslider",
     "style05",
     "heading",
     "heading2",
@@ -863,7 +845,7 @@ const PlasmicDescendants = {
     "form"
   ],
   navbar: ["navbar"],
-  slider: ["slider"],
+  homeslider: ["homeslider"],
   style05: [
     "style05",
     "heading",
@@ -934,7 +916,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "div";
   navbar: typeof Navbar;
-  slider: typeof Slider;
+  homeslider: typeof Slider;
   style05: "div";
   heading: "div";
   heading2: "div";
@@ -1031,7 +1013,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     navbar: makeNodeComponent("navbar"),
-    slider: makeNodeComponent("slider"),
+    homeslider: makeNodeComponent("homeslider"),
     style05: makeNodeComponent("style05"),
     heading: makeNodeComponent("heading"),
     heading2: makeNodeComponent("heading2"),

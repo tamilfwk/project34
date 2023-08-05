@@ -58,7 +58,7 @@
   min-width: 0;
   display: flex;
 }
-.slider:global(.__wab_instance) {
+.homeslider:global(.__wab_instance) {
   width: 100%;
   max-width: 100%;
   flex-direction: column;
