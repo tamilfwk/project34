@@ -59,12 +59,11 @@
   display: flex;
 }
 .homeslider:global(.__wab_instance) {
-  width: 100%;
+  width: auto;
   max-width: 100%;
   flex-direction: column;
   object-fit: cover;
   position: relative;
-  min-width: 0;
 }
 .text__gZuQ {
   width: 100%;

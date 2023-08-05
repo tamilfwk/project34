@@ -165,7 +165,7 @@ function PlasmicHomepage__RenderFunc(props: {
   const [$queries, setDollarQueries] = React.useState({});
 
   const new$Queries = {
-    query2: usePlasmicDataOp(
+    supa: usePlasmicDataOp(
       (() => {
         try {
           return {
@@ -237,12 +237,13 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.homeslider}
                 autoplay={true}
                 className={classNames("__wab_instance", sty.homeslider)}
+                infinite={false}
                 pauseOnHover={false}
               >
                 {(
                   (() => {
                     try {
-                      return $queries.query2.data;
+                      return $queries.supa.data;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -398,7 +399,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 {(
                   (() => {
                     try {
-                      return $queries.query2.data;
+                      return $queries.supa.data;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
