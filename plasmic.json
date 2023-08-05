@@ -932,7 +932,8 @@
           "displayName": "hostless-loading-boundary",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "28Ba3BDvRe7EiWdfFNnLB6",
@@ -1140,7 +1141,8 @@
           "displayName": "AntdTableValue",
           "componentImportPath": "@plasmicpkgs/antd/skinny/registerTable"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

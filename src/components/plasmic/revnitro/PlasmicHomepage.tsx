@@ -235,6 +235,7 @@ function PlasmicHomepage__RenderFunc(props: {
               <Slider
                 data-plasmic-name={"homeslider"}
                 data-plasmic-override={overrides.homeslider}
+                arrows={false}
                 autoplay={true}
                 className={classNames("__wab_instance", sty.homeslider)}
                 infinite={false}
