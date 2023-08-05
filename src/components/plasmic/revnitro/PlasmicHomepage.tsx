@@ -255,32 +255,17 @@ function PlasmicHomepage__RenderFunc(props: {
                   })() ?? []
                 ).map((currentItem, currentIndex) => (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__pfIcp)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__gZuQ
+                    )}
                     key={currentIndex}
                   >
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__vSneo)}
-                      displayHeight={"auto" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"auto" as const}
-                      src={
-                        "https://static1.plasmic.app/components/react-slick/slide1.png" as const
-                      }
-                    />
-
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rf7CR
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
+                      className={projectcss.__wab_expr_html_text}
+                      dangerouslySetInnerHTML={{
+                        __html: (() => {
                           try {
                             return currentItem.Name;
                           } catch (e) {
@@ -288,13 +273,13 @@ function PlasmicHomepage__RenderFunc(props: {
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "Hello";
+                              return "";
                             }
                             throw e;
                           }
-                        })()}
-                      </React.Fragment>
-                    </div>
+                        })()
+                      }}
+                    />
                   </div>
                 ))}
               </Slider>

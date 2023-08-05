@@ -66,34 +66,7 @@
   position: relative;
   min-width: 0;
 }
-.freeBox__pfIcp {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  align-content: stretch;
-  flex-shrink: 0;
-  min-width: 0;
-  min-height: 0;
-  padding: 8px;
-}
-.img__vSneo {
-  object-fit: cover;
-  max-width: 100%;
-}
-.img__vSneo > picture > img {
-  object-fit: cover;
-}
-.img__vSneo > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.text__rf7CR {
-  position: relative;
+.text__gZuQ {
   width: 100%;
   height: auto;
   max-width: 100%;
