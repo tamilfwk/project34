@@ -239,64 +239,31 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.homeslider)}
                 pauseOnHover={false}
               >
-                {(
-                  (() => {
-                    try {
-                      return $queries.query2.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
+                <div className={classNames(projectcss.all, sty.freeBox__pfIcp)}>
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__vSneo)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    src={
+                      "https://static1.plasmic.app/components/react-slick/slide1.png" as const
                     }
-                  })() ?? []
-                ).map((currentItem, currentIndex) => (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__pfIcp)}
-                    key={currentIndex}
-                  >
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__vSneo)}
-                      displayHeight={"auto" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"auto" as const}
-                      src={
-                        "https://static1.plasmic.app/components/react-slick/slide1.png" as const
-                      }
-                    />
+                  />
 
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rf7CR
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return currentItem.Name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rf7CR
+                    )}
+                  >
+                    {""}
                   </div>
-                ))}
+                </div>
               </Slider>
               <p.Stack
                 as={"div"}
