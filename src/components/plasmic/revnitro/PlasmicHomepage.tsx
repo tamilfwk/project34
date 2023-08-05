@@ -239,7 +239,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames("__wab_instance", sty.homeslider)}
                 pauseOnHover={false}
               >
-                {([2, 3, 4] ?? []).map((currentItem, currentIndex) => (
+                {(
+                  (() => {
+                    try {
+                      return $queries.query2.data;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })() ?? []
+                ).map((currentItem, currentIndex) => (
                   <div
                     className={classNames(projectcss.all, sty.freeBox__pfIcp)}
                     key={currentIndex}
@@ -265,7 +279,21 @@ function PlasmicHomepage__RenderFunc(props: {
                         sty.text__rf7CR
                       )}
                     >
-                      {"Hello"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return currentItem.Name;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "Hello";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                   </div>
                 ))}

@@ -68,7 +68,7 @@
 }
 .freeBox__pfIcp {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   width: 100%;
   height: auto;
