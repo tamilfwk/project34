@@ -235,11 +235,16 @@ function PlasmicHomepage__RenderFunc(props: {
               <Slider
                 data-plasmic-name={"homeslider"}
                 data-plasmic-override={overrides.homeslider}
-                arrows={false}
+                adaptiveHeight={true}
+                arrows={true}
                 autoplay={true}
+                centerMode={true}
                 className={classNames("__wab_instance", sty.homeslider)}
-                infinite={false}
+                infinite={true}
+                lazyLoad={"progressive" as const}
                 pauseOnHover={false}
+                rows={1 as const}
+                slidesPerRow={1 as const}
               >
                 {(
                   (() => {
