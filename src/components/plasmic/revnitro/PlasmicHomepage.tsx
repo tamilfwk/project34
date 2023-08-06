@@ -45,10 +45,10 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: nqp6ufvZoI04/component
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: rl4fKnBzap8m/codeComponent
 import Slider from "react-slick"; // plasmic-import: HOQUyOpClJ/codeComponent
 import BlogCard2 from "../../BlogCard2"; // plasmic-import: T3xw65d63J/component
 import FooterSection from "../../FooterSection"; // plasmic-import: 0GG8n9BMOzpQ/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: rl4fKnBzap8m/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -76,6 +76,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
+  dataFetcher?: p.Flex<typeof Fetcher>;
   homeslider?: p.Flex<typeof Slider>;
   style05?: p.Flex<"div">;
   heading?: p.Flex<"div">;
@@ -232,64 +233,81 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames("__wab_instance", sty.navbar)}
                 />
               ) : null}
-              <Slider
-                data-plasmic-name={"homeslider"}
-                data-plasmic-override={overrides.homeslider}
-                adaptiveHeight={true}
-                arrows={true}
-                autoplay={true}
-                centerMode={true}
-                className={classNames("__wab_instance", sty.homeslider)}
-                infinite={true}
-                lazyLoad={"progressive" as const}
-                pauseOnHover={false}
-                rows={1 as const}
-                slidesPerRow={1 as const}
+              <Fetcher
+                data-plasmic-name={"dataFetcher"}
+                data-plasmic-override={overrides.dataFetcher}
+                className={classNames("__wab_instance", sty.dataFetcher)}
+                dataOp={{
+                  sourceId: "3dhK6jNsw7TnVEx2a9ccqj",
+                  opId: "498fba7b-0676-457e-bff8-65889b6f2516",
+                  userArgs: {},
+                  cacheKey: "plasmic.$.QSAq0yScd.$.",
+                  invalidatedKeys: null,
+                  roleId: null
+                }}
+                queries={$queries}
               >
-                {(
-                  (() => {
-                    try {
-                      return $queries.supa.data;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return [];
-                      }
-                      throw e;
-                    }
-                  })() ?? []
-                ).map((currentItem, currentIndex) => (
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gZuQ
-                    )}
-                    key={currentIndex}
+                {($queries: any) => (
+                  <Slider
+                    data-plasmic-name={"homeslider"}
+                    data-plasmic-override={overrides.homeslider}
+                    adaptiveHeight={true}
+                    arrows={true}
+                    autoplay={true}
+                    centerMode={true}
+                    className={classNames("__wab_instance", sty.homeslider)}
+                    infinite={true}
+                    lazyLoad={"progressive" as const}
+                    pauseOnHover={false}
+                    rows={1 as const}
+                    slidesPerRow={1 as const}
                   >
-                    <div
-                      className={projectcss.__wab_expr_html_text}
-                      dangerouslySetInnerHTML={{
-                        __html: (() => {
-                          try {
-                            return currentItem.Name;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "";
-                            }
-                            throw e;
+                    {(
+                      (() => {
+                        try {
+                          return $queries.data.data;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return [];
                           }
-                        })()
-                      }}
-                    />
-                  </div>
-                ))}
-              </Slider>
+                          throw e;
+                        }
+                      })() ?? []
+                    ).map((currentItem, currentIndex) => (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__gZuQ
+                        )}
+                        key={currentIndex}
+                      >
+                        <div
+                          className={projectcss.__wab_expr_html_text}
+                          dangerouslySetInnerHTML={{
+                            __html: (() => {
+                              try {
+                                return currentItem.Name;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                )}
+              </Fetcher>
               <p.Stack
                 as={"div"}
                 data-plasmic-name={"style05"}
@@ -766,6 +784,7 @@ const PlasmicDescendants = {
     "root",
     "section",
     "navbar",
+    "dataFetcher",
     "homeslider",
     "style05",
     "heading",
@@ -803,6 +822,7 @@ const PlasmicDescendants = {
   section: [
     "section",
     "navbar",
+    "dataFetcher",
     "homeslider",
     "style05",
     "heading",
@@ -837,6 +857,7 @@ const PlasmicDescendants = {
     "form"
   ],
   navbar: ["navbar"],
+  dataFetcher: ["dataFetcher", "homeslider"],
   homeslider: ["homeslider"],
   style05: [
     "style05",
@@ -908,6 +929,7 @@ type NodeDefaultElementType = {
   root: "div";
   section: "div";
   navbar: typeof Navbar;
+  dataFetcher: typeof Fetcher;
   homeslider: typeof Slider;
   style05: "div";
   heading: "div";
@@ -1005,6 +1027,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     navbar: makeNodeComponent("navbar"),
+    dataFetcher: makeNodeComponent("dataFetcher"),
     homeslider: makeNodeComponent("homeslider"),
     style05: makeNodeComponent("style05"),
     heading: makeNodeComponent("heading"),
